@@ -8,14 +8,7 @@ public class Feed {
     }
     public void addAllPosts(List<Post> posts){
         this.posts.addAll(posts);
-    }
-
-    // TODO: make the mostPopularPost return the post with the most likes
-    public Post  mostPopularPost(){
-        throw new UnsupportedOperationException("Method not implemented yet");
-    }
-    
-
+    }    
 
     public void showFeed(){
         for(Post post:posts){
