@@ -89,5 +89,11 @@ public class SocialMediaPostGenerator {
             posts.add(newPost);
         }
         return posts;
+
+        public Post mostPopularPost(){
+            for(Post p:this.posts){
+                
+            }
+        }
     }
 }
