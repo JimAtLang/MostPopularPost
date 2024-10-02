@@ -29,5 +29,11 @@ public class Post {
         this.likes++;
     }
 
+    public void printPost(){
+        System.out.println("Title: " + this.title);
+        System.out.println("Content:" + this.content);
+        System.out.println("Likes: " + this.likes);
+
+    }
 
 }
