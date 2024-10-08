@@ -16,5 +16,16 @@ public class Feed {
         }
     }
 
+    public Post mostPopularPost(){
+        int mostLikes = 0;
+        Post mostPopularPostSoFar = null;
+        for(Post post:posts){
+            if (post.getLikes() > mostLikes){
+                mostLikes = post.getLikes();
+                mostPopularPostSoFar = post;
+            }
+        }
+        return mostPopularPostSoFar;
+    }
     // TODO: create a mostPopularPost() method that returns the post with the most likes
 }
