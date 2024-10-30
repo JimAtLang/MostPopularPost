@@ -89,17 +89,7 @@ public class SocialMediaPostGenerator {
             posts.add(newPost);
         }
         return posts;
-
-        public Post mostPopularPost(){
-            // TODO: Do something if there are no posts (line 96 would run into an error)
-            for(Post p:this.posts){
-                Post mostPopular = this.posts.get(index:0);
-                for(Post p:this.posts){
-                    if(p.getLikes()>mostPopular.getLikes()){
-                        mostPopular = p;
-                    }
-            }
-            return mostPopular;
-        }
     }
+
+    
 }
