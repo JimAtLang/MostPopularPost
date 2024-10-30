@@ -91,5 +91,5 @@ public class SocialMediaPostGenerator {
         return posts;
     }
 
-    
+
 }

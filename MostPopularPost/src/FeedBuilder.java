@@ -1,11 +1,16 @@
-public class FeedBuilder {
-<<<<<<< HEAD
+import java.util.ArrayList;
 
-=======
+public class FeedBuilder {
+    // TODO: Create Feed Class
     public Feed chronologicalFeed(User user){
         Feed f = new Feed();
-        // write code for chronological feed here
+        ArrayList<Post> list = new ArrayList<>();
+        User user = new User();
+        for (User u:user.getFollows()){
+            for (Post p:user.postHistory){
+                list.add()
+            }
+        }
         return f;
     }
->>>>>>> 9a0b693e8b7ab9e53d9e79aba238aa617395a3a6
 }
