@@ -17,4 +17,13 @@ public class Feed {
     }
 
     // TODO: create a mostPopularPost() method that returns the post with the most likes
+    public Post mostPopularPost(){
+        Post mostPopular = this.posts.get(0);
+        for(Post p:this.posts){
+            if(p.getLikes()>mostPopular.getLikes()){
+                mostPopular = p;
+            }
+        }
+        return mostPopular;
+    }
 }
