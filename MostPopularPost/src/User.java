@@ -29,7 +29,9 @@ public class User {
         Post post = new Post(title, text, 0);
         postHistory.add(post);
     }
-
+    public void post(Post p){
+        postHistory.add(p);
+    }
     public String getUserName() {
         return userName;
     }
