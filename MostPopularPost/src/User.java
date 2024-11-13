@@ -30,6 +30,9 @@ public class User {
         postHistory.add(post);
     }
 
+    public void post(Post p){
+        postHistory.add(p);
+    }
     public String getUserName() {
         return userName;
     }
