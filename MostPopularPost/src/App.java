@@ -5,7 +5,8 @@ public class App {
         new App();
     }
     public App(){
-        FeedBuilder fb = new FeedBuilder();
+        Tester t = new Tester();
+        t.TestChronologicalFeed();
     }
 
 }
