@@ -20,7 +20,7 @@ public class Tester {
         User u = new User(generateUserName());
         SocialMediaPostGenerator smpg = new SocialMediaPostGenerator();
         LocalDateTime now = LocalDateTime.now();
-        LocalDateTime twoDaysAgo = now.minusDays(1);
+        LocalDateTime twoDaysAgo = now.minusDays(14);
         LocalDateTime postDate = twoDaysAgo;
         while(postDate.isBefore(now)){
             System.out.println("generating post for user" + u.getUserName() + " on post date " + postDate);
