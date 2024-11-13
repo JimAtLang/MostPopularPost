@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class FeedBuilder {
     public Feed chronologicalFeed(User user){
@@ -10,6 +11,8 @@ public class FeedBuilder {
                 followedPosts.add(p);
             }
         }
+        Collections.sort(followedPosts, new SortPostByDateDescending());
+        f.addAllPosts(followedPosts);
         // TODO: sort list followedPosts chronologically
         // TODO: add the list followedPosts to Feed
         return f;

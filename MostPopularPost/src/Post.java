@@ -1,11 +1,20 @@
+import java.time.LocalDateTime;
+
 public class Post {
     private String title;
     private String content;
     private int likes;
+    private LocalDateTime postTime;
     public Post(String title, String content, int likes) {
         this.title = title;
         this.content = content;
         this.likes = likes;
+    }
+    public Post(String title, String content, int likes, LocalDateTime postTime) {
+        this.title = title;
+        this.content = content;
+        this.likes = likes;
+        this.postTime = postTime;
     }
     public String getTitle() {
         return title;
@@ -34,6 +43,12 @@ public class Post {
         System.out.println("Content:" + this.content);
         System.out.println("Likes: " + this.likes);
 
+    }
+    public LocalDateTime getPostTime() {
+        return postTime;
+    }
+    public void setPostTime(LocalDateTime postTime) {
+        this.postTime = postTime;
     }
 
 }

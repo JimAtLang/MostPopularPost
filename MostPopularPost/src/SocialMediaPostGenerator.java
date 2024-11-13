@@ -48,45 +48,54 @@ public class SocialMediaPostGenerator {
         return now.plusSeconds(randomSeconds);
     }
 
+    public Post generatePost(){
+        List<String> categoryKeys = new ArrayList<>(CATEGORIES.keySet());
+        String category = categoryKeys.get(random.nextInt(categoryKeys.size()));
+
+        // Select random keywords from the chosen category
+        String[] keywordsArray = CATEGORIES.get(category);
+        String keywords = keywordsArray[random.nextInt(keywordsArray.length)];
+
+        // Generate random title
+        String title = TITLES[random.nextInt(TITLES.length)]
+                .replace("{action}", "boost productivity")
+                .replace("{benefit}", "focus")
+                .replace("{topic}", keywords)
+                .replace("{goal}", "achieve your goals")
+                .replace("{timeframe}", "30 days")
+                .replace("{items}", "tools")
+                .replace("{outcome}", "success")
+                .replace("{concept}", "self-care");
+
+        // Generate random text
+        String text = TEXTS[random.nextInt(TEXTS.length)]
+                .replace("{number}", "5")
+                .replace("{action}", "stay organized")
+                .replace("{benefit}", "mental clarity")
+                .replace("{goal}", "manage your time")
+                .replace("{step1}", "set goals")
+                .replace("{step2}", "track progress")
+                .replace("{items}", "apps and tips");
+
+        int likes = random.nextInt(500);
+        ArrayList<String> keywordsList = new ArrayList<>();
+        Collections.addAll(keywordsList,keywordsArray);
+        Post newPost = new Post(title, text, likes);
+        return newPost;
+    }
+
+    public Post generatePostWithDate(LocalDateTime date){
+        Post newPost = generatePost();
+        newPost.setPostTime(date);
+        return newPost;
+    }
 
     public ArrayList<Post> generatePosts(int count) {
         
         ArrayList<Post> posts = new ArrayList<>();
         for (int i = 0; i < count; i++) {
             // Select random category
-            List<String> categoryKeys = new ArrayList<>(CATEGORIES.keySet());
-            String category = categoryKeys.get(random.nextInt(categoryKeys.size()));
-
-            // Select random keywords from the chosen category
-            String[] keywordsArray = CATEGORIES.get(category);
-            String keywords = keywordsArray[random.nextInt(keywordsArray.length)];
-
-            // Generate random title
-            String title = TITLES[random.nextInt(TITLES.length)]
-                    .replace("{action}", "boost productivity")
-                    .replace("{benefit}", "focus")
-                    .replace("{topic}", keywords)
-                    .replace("{goal}", "achieve your goals")
-                    .replace("{timeframe}", "30 days")
-                    .replace("{items}", "tools")
-                    .replace("{outcome}", "success")
-                    .replace("{concept}", "self-care");
-
-            // Generate random text
-            String text = TEXTS[random.nextInt(TEXTS.length)]
-                    .replace("{number}", "5")
-                    .replace("{action}", "stay organized")
-                    .replace("{benefit}", "mental clarity")
-                    .replace("{goal}", "manage your time")
-                    .replace("{step1}", "set goals")
-                    .replace("{step2}", "track progress")
-                    .replace("{items}", "apps and tips");
-
-            int likes = random.nextInt(500);
-            ArrayList<String> keywordsList = new ArrayList<>();
-            Collections.addAll(keywordsList,keywordsArray);
-            Post newPost = new Post(title, text, likes);
-            posts.add(newPost);
+            posts.add(generatePost());
         }
         return posts;
     }
