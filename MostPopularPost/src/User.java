@@ -6,6 +6,7 @@ public class User {
     private ArrayList<User> follows;
     private LinkedList<Post> postHistory;
     private ArrayList<String> interests;
+
     
     public ArrayList<String> getInterests() {
         return interests;
@@ -20,6 +21,7 @@ public class User {
         this.follows = new ArrayList<>();
         this.postHistory = new LinkedList<>();
         this.interests = new ArrayList<>();
+        
     }
 
     public LinkedList<Post> getPostHistory() {
@@ -29,10 +31,10 @@ public class User {
         Post post = new Post(title, text, 0);
         postHistory.add(post);
     }
-
     public void post(Post p){
         postHistory.add(p);
     }
+
     public String getUserName() {
         return userName;
     }
